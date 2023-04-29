@@ -85,6 +85,8 @@ exports.login = async (req, res) => {
       .json({ username: user.username, occupation: user.occupation, token });
     console.log("backend/user.js", username, occupation, token);
   } catch (err) {
+    console.log("before 500");
     res.status(500).json(err);
+    console.log("err", err);
   }
 };
